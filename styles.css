@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f3f8;
+  color: #1f1f29;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+.hero {
+  background: white;
+  border-radius: 18px;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 18px;
+}
+
+nav {
+  margin-top: 28px;
+}
+
+nav a {
+  display: inline-block;
+  margin: 8px 12px 8px 0;
+  padding: 10px 16px;
+  background: #5b3fd6;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  opacity: 0.9;
+}
