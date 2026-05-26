@@ -68,7 +68,7 @@ main {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  grid-template-columns: 1.05fr 0.95fr;
   gap: 42px;
   align-items: center;
   padding: 58px;
@@ -81,8 +81,6 @@ main {
 
 .hero-content {
   min-width: 0;
-  position: relative;
-  z-index: 3;
 }
 
 .legal-hero {
@@ -197,21 +195,16 @@ h3 {
 
 /* App screenshot preview */
 .app-preview {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  min-width: 0;
-  min-height: 560px;
-  overflow: visible;
 }
 
 .screenshot-stack {
   position: relative;
   width: 430px;
   height: 560px;
-  max-width: 100%;
-  flex: 0 0 auto;
 }
 
 .app-screenshot {
@@ -219,6 +212,7 @@ h3 {
   display: block;
   width: 255px;
   height: 520px;
+  max-width: none;
   object-fit: cover;
   object-position: top center;
   border-radius: 28px;
@@ -234,8 +228,8 @@ h3 {
 }
 
 .app-screenshot-front {
-  top: 56px;
-  left: 110px;
+  top: 54px;
+  left: 115px;
   z-index: 2;
 }
 
@@ -320,40 +314,29 @@ h3 {
   font-weight: 700;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
-    gap: 36px;
-  }
-
-  .hero-content {
-    max-width: 720px;
+    padding: 36px;
   }
 
   .app-preview {
-    justify-content: center;
-    min-height: 540px;
+    margin-top: 10px;
   }
 
   .screenshot-stack {
-    width: 410px;
-    height: 540px;
+    width: 390px;
+    height: 520px;
   }
 
   .app-screenshot {
-    width: 245px;
-    height: 500px;
+    width: 235px;
+    height: 480px;
   }
 
   .app-screenshot-front {
     top: 44px;
     left: 105px;
-  }
-}
-
-@media (max-width: 900px) {
-  .hero {
-    padding: 36px;
   }
 
   .feature-grid,
@@ -382,17 +365,8 @@ h3 {
     border-radius: 24px;
   }
 
-  h1 {
-    font-size: clamp(38px, 13vw, 54px);
-  }
-
   .hero-text {
     font-size: 18px;
-  }
-
-  .app-preview {
-    min-height: 430px;
-    justify-content: center;
   }
 
   .screenshot-stack {
@@ -418,22 +392,5 @@ h3 {
 
   .site-footer {
     flex-direction: column;
-  }
-}
-
-@media (max-width: 390px) {
-  .screenshot-stack {
-    width: 270px;
-    height: 400px;
-  }
-
-  .app-screenshot {
-    width: 170px;
-    height: 365px;
-  }
-
-  .app-screenshot-front {
-    top: 36px;
-    left: 72px;
   }
 }
