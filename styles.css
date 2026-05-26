@@ -68,7 +68,7 @@ main {
 
 .hero {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
   gap: 42px;
   align-items: center;
   padding: 58px;
@@ -81,6 +81,8 @@ main {
 
 .hero-content {
   min-width: 0;
+  position: relative;
+  z-index: 3;
 }
 
 .legal-hero {
@@ -199,6 +201,7 @@ h3 {
   justify-content: center;
   align-items: center;
   width: 100%;
+  min-width: 0;
   min-height: 560px;
   overflow: visible;
 }
@@ -208,6 +211,7 @@ h3 {
   width: 430px;
   height: 560px;
   max-width: 100%;
+  flex: 0 0 auto;
 }
 
 .app-screenshot {
@@ -316,29 +320,40 @@ h3 {
   font-weight: 700;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .hero {
     grid-template-columns: 1fr;
-    padding: 36px;
+    gap: 36px;
+  }
+
+  .hero-content {
+    max-width: 720px;
   }
 
   .app-preview {
-    min-height: 520px;
+    justify-content: center;
+    min-height: 540px;
   }
 
   .screenshot-stack {
-    width: 390px;
-    height: 520px;
+    width: 410px;
+    height: 540px;
   }
 
   .app-screenshot {
-    width: 235px;
-    height: 480px;
+    width: 245px;
+    height: 500px;
   }
 
   .app-screenshot-front {
     top: 44px;
-    left: 100px;
+    left: 105px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 36px;
   }
 
   .feature-grid,
@@ -367,17 +382,22 @@ h3 {
     border-radius: 24px;
   }
 
+  h1 {
+    font-size: clamp(38px, 13vw, 54px);
+  }
+
   .hero-text {
     font-size: 18px;
   }
 
   .app-preview {
-    min-height: 440px;
+    min-height: 430px;
+    justify-content: center;
   }
 
   .screenshot-stack {
     width: 300px;
-    height: 440px;
+    height: 430px;
   }
 
   .app-screenshot {
@@ -388,7 +408,7 @@ h3 {
 
   .app-screenshot-front {
     top: 40px;
-    left: 85px;
+    left: 82px;
   }
 
   .feature-grid,
@@ -398,5 +418,22 @@ h3 {
 
   .site-footer {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 390px) {
+  .screenshot-stack {
+    width: 270px;
+    height: 400px;
+  }
+
+  .app-screenshot {
+    width: 170px;
+    height: 365px;
+  }
+
+  .app-screenshot-front {
+    top: 36px;
+    left: 72px;
   }
 }
